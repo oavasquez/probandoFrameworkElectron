@@ -1,37 +1,27 @@
 <div class="container">
-
-
     <div class="row">
-        <h1>Cargando Archivos Excel</h1>
+        <div class="col-md-6">
 
-        <div class="progress-wrapper" *ngIf="maxVal">
 
-            <div class="text" *ngIf="!isFinished">
-                {{ max - current | number: '1.1-1' }}
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <!-- Button and dropdown menu -->
+                </div>
+                <input type="file" class="form-control" (change)="onFileChange($event)" multiple="false" placeholder="">
             </div>
 
-          
-            <div class="col-md-12 circulo" >
 
-                <round-progress [max]="max" [current]="current" [radius]="100" [stroke]="25">
-                </round-progress>
-            </div>
-            
 
-        </div>
-    </div>
+            <table class="sjs-table">
+                
+                    <tr *ngFor="let encabezado of jsonencabezado" >
+                        {{encabezado}} <input type="radio" name="gender" value="male" *ngIf="encabezado!=null">
+                        </tr>
+              
+            </table>
+           
+            <button class="btn btn-success" (click)="mostrarEncabezados()">Carga data!</button>
 
-    <div class="row botones">
-        <div class="row">
-            <button class="btn btn-success" >Cargar archivo Excel</button>
-            <button class="btn btn-success" *ngIf="currentVal <= 0" (click)="start()">Abrir archivo</button><br><br>
-
-            <div class="row">
-
-                    <input class="input" placeholder="Nombre del archivo" class="form-control" >
-
-               
-            </div>
         </div>
     </div>
 </div>

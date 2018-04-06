@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms';
 import { RoundProgressModule } from 'angular-svg-round-progressbar'; 
+import { ChartsModule } from 'ng2-charts';
+
 
 
 @NgModule({
@@ -15,8 +17,9 @@ import { RoundProgressModule } from 'angular-svg-round-progressbar';
   ],
   imports: [
     BrowserModule,
-    FormsModule, // <-- here
-    RoundProgressModule // <-- and here
+    FormsModule,
+    RoundProgressModule,
+    ChartsModule 
 
   ],
   providers: [],
