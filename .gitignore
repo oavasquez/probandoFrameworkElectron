@@ -9,6 +9,9 @@
 # dependencies
 /node_modules
 
+#teste
+/angularprueba-win32-ia32
+
 # IDEs and editors
 /.idea
 .project
