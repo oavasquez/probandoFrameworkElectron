@@ -6,5 +6,10 @@
 }
 
 .container{
-    padding: 0%
+    text-align: center;
+}
+
+.circulo{
+    text-align: -webkit-center;
+
 }

@@ -1,34 +1,37 @@
 <div class="container">
 
 
-        <div class="row">
-            <h1>Electron Timer</h1>
-    
-            <div class="progress-wrapper" *ngIf="maxVal">
-    
-                <div class="text" *ngIf="!isFinished">
-                    {{ max - current | number: '1.1-1' }}
-                </div>
-    
-               
-    
+    <div class="row">
+        <h1>Cargando Archivos Excel</h1>
+
+        <div class="progress-wrapper" *ngIf="maxVal">
+
+            <div class="text" *ngIf="!isFinished">
+                {{ max - current | number: '1.1-1' }}
+            </div>
+
+          
+            <div class="col-md-12 circulo" >
+
                 <round-progress [max]="max" [current]="current" [radius]="100" [stroke]="25">
                 </round-progress>
-    
             </div>
+            
+
         </div>
-    
-        <div class="row botones">
+    </div>
+
+    <div class="row botones">
+        <div class="row">
+            <button class="btn btn-success" >Cargar archivo Excel</button>
+            <button class="btn btn-success" *ngIf="currentVal <= 0" (click)="start()">Abrir archivo</button><br><br>
+
             <div class="row">
-                <label>Seconds</label>
-                <input class="input" placeholder="number of seconds" type="text" [(ngModel)]="max" (keydown)="reset()">
-    
-                <div class="row">
-    
-                    <button *ngIf="currentVal <= 0" (click)="start()">Start</button>
-                    <button *ngIf="!isFinished" (click)="finish()">Finish</button>
-                    <button  (click)=" reset()">Reset</button>
-                </div>
+
+                    <input class="input" placeholder="Nombre del archivo" class="form-control" >
+
+               
             </div>
         </div>
     </div>
+</div>
